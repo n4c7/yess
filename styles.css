@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<audio controls loop autoplay>
+        <source src="bruh3.mp3" type="audio/mp3">
+</audio>
+<head>
+  <title>Spinning Tables</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+      margin: 0;
+      overflow: hidden;
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .table {
+      animation: spin 3s infinite linear;
+      padding: 10px;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      var tables = document.getElementsByClassName('table');
+      var lastTable = tables[tables.length - 1];
+      var lastTablePosition = lastTable.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (lastTablePosition < windowHeight) {
+        for (var i = 0; i < 10; i++) {
+          var newTable = document.createElement('span');
+          newTable.innerHTML = '🪑';
+          newTable.classList.add('table');
+          document.getElementsByClassName('container')[0].appendChild(newTable);
+        }
+      }
+    });
+
+    setTimeout(function() {
+      window.location.href = 'https://www.youtube.com/watch?v=iik25wqIuFo'; // Replace with your desired URL
+    }, 30000); // 30 seconds
+  </script>
+</head>
+<body>
+  <div class="container">
+    <span class="table">🪑</span>
+  </div>
+  
+  <script>
+    for (var i = 0; i < 100; i++) {
+      var newTable = document.createElement('span');
+      newTable.innerHTML = '🪑';
+      newTable.classList.add('table');
+      document.getElementsByClassName('container')[0].appendChild(newTable);
+    }
+  </script>
+</body>
+</html>
+
+[ec2-user@ip-172-31-89-14 html]$ cp styles.css 
+cp: missing destination file operand after 'styles.css'
+Try 'cp --help' for more information.
+[ec2-user@ip-172-31-89-14 html]$ cat styles.css 
+body {
+  background: linear-gradient(to bottom, #800000, #000000);
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #ff6f00;
+}
+
+.audio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.roasting-text {
+  font-size: 18px;
+  text-align: center;
+}
